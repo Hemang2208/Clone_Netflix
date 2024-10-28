@@ -1,3 +1,5 @@
+"use strict"; // Enforce strict mode
+
 document.addEventListener("DOMContentLoaded", () => {
     const loader = document.getElementById('loader');
     const percentageText = document.querySelector('.percentage');
@@ -6,41 +8,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let percentage = 0;
 
-    loader.style.opacity = '1'; // Start fully visible
-    percentageText.style.opacity = '1'; // Start fully visible
+    loader.style.opacity = '1';
+    percentageText.style.opacity = '1';
 
     const loadingInterval = setInterval(() => {
         if (percentage < 100) {
             percentage++;
-            percentageText.textContent = `Loading ${percentage}%`;
-            progressBar.style.width = percentage + '%';
-
-            // Update opacity based on percentage
-            loader.style.opacity = ((100 - percentage) / 100).toString(); // Fade out
-            percentageText.style.opacity = ((100 - percentage) / 100).toString(); // Fade out
+            updateLoaderUI(percentage);
         } else {
             clearInterval(loadingInterval);
-            setTimeout(() => {
-                loader.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }, 500);
+            hideLoader();
         }
     }, 30);
 
     document.body.style.overflow = 'hidden';
 
     window.onscroll = () => {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            scrollToTopButton.style.display = "block";
-        } else {
-            scrollToTopButton.style.display = "none";
-        }
+        scrollToTopButton.style.display = (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) ? "block" : "none";
     };
 
     scrollToTopButton.onclick = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
+
+    function updateLoaderUI(percentage) {
+        percentageText.textContent = `Loading ${percentage}%`;
+        progressBar.style.width = `${percentage}%`;
+        
+        const opacityValue = ((100 - percentage) / 100).toString();
+        loader.style.opacity = opacityValue;
+        percentageText.style.opacity = opacityValue;
+    }
+
+    function hideLoader() {
+        setTimeout(() => {
+            loader.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }, 500);
+    }
 });

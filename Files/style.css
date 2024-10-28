@@ -47,6 +47,13 @@ nav img {
 nav button {
     position: relative;
     z-index: 10;
+    transition: background-color 0.5s, transform 0.5s;
+
+}
+
+nav button:hover {
+    background-color: #fa7b7b;
+    transform: translateY(-2px);
 }
 
 .hero {
@@ -106,10 +113,16 @@ nav button {
     font-size: 20px;
     border-radius: 5px;
     font-weight: 400;
+    transition: background-color 0.5s, transform 0.5s;
+}
+
+.btn-red:hover {
+    background-color: #fa7b7b;
+    transform: translateY(-2px);
 }
 
 .btn-red-sm {
-    background-color: red;
+    background-color: rgb(220, 24, 24);
     color: white;
 }
 
@@ -244,16 +257,14 @@ footer .questions a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 1);
-    /* Background color */
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
     opacity: 0;
-    /* Start with hidden opacity */
     transition: opacity 0.5s ease;
-    /* Transition for opacity */
+
 }
 
 .loader-inner {
@@ -281,30 +292,32 @@ footer .questions a {
 .progress {
     height: 100%;
     width: 0;
-    background-color: #ffeb3b;
-    /* Yellow */
+    background-color: yellow;
     border-radius: 10px;
     transition: width 0.3s ease;
-    /* Smooth transition for width */
 }
 
 /* Scroll to Top Button Styles */
 #scrollToTop {
     position: fixed;
+    z-index: 100;
     bottom: 20px;
     right: 20px;
     display: none;
     background-color: red;
     color: whitesmoke;
     border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
+    border-radius: 50px;
+    padding: 12px 18px;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 #scrollToTop:hover {
-    background-color: #0056b3;
+    background-color: #fa7b7b;
+    transform: translateY(-2px);
 }
 
 
@@ -361,14 +374,409 @@ footer .questions a {
         align-items: center;
     }
 
-
-}
-
-@media screen and (max-width: 1300px) {
-
     .footer {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 25px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    nav {
+        max-width: 90vw;
+    }
+
+    .first {
+        flex-wrap: wrap;
+    }
+
+    .secImg img,
+    .secImg video {
+        width: 290px; /* 5% reduction */
+    }
+
+    .hero> :nth-child(1) {
+        font-size: 30px; /* 5% reduction */
+    }
+
+    .hero> :nth-child(2),
+    .hero> :nth-child(3) {
+        font-size: 17px; /* 5% reduction */
+    }
+
+    .hero-buttons {
+        gap: 15px; /* 5% reduction */
+    }
+
+    .faq h2 {
+        font-size: 30px; /* 5% reduction */
+    }
+
+    footer {
+        padding: 70px 0; /* 5% reduction */
+    }
+
+    .footer {
+        gap: 24px; /* 5% reduction */
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    nav {
+        max-width: 85vw;
+    }
+
+    .secImg img,
+    .secImg video {
+        width: 275px; /* ~5% reduction */
+    }
+
+    .hero> :nth-child(1) {
+        font-size: 29px; /* ~3% reduction */
+    }
+
+    .hero> :nth-child(2),
+    .hero> :nth-child(3) {
+        font-size: 16.5px; /* ~3% reduction */
+    }
+
+    .hero-buttons {
+        gap: 14px; /* ~7% reduction */
+    }
+
+    .faq h2 {
+        font-size: 29px; /* ~3% reduction */
+    }
+
+    footer {
+        padding: 67px 0; /* ~4% reduction */
+    }
+
+    .footer {
+        gap: 23px; /* ~4% reduction */
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    nav {
+        max-width: 80vw;
+    }
+
+    .secImg img,
+    .secImg video {
+        width: 260px; /* ~5% reduction */
+    }
+
+    .hero> :nth-child(1) {
+        font-size: 28px; /* ~3% reduction */
+    }
+
+    .hero> :nth-child(2),
+    .hero> :nth-child(3) {
+        font-size: 16px; /* ~3% reduction */
+    }
+
+    .hero-buttons {
+        gap: 13px; /* ~7% reduction */
+    }
+
+    .faq h2 {
+        font-size: 28px; /* ~3% reduction */
+    }
+
+    footer {
+        padding: 64px 0; /* ~4% reduction */
+    }
+
+    .footer {
+        gap: 22px; /* ~4% reduction */
+    }
+}
+
+@media screen and (max-width: 900px) {
+    nav {
+        max-width: 75vw;
+    }
+
+    .secImg img,
+    .secImg video {
+        width: 245px; /* ~5% reduction */
+    }
+
+    .hero> :nth-child(1) {
+        font-size: 27px; /* ~3% reduction */
+    }
+
+    .hero> :nth-child(2),
+    .hero> :nth-child(3) {
+        font-size: 15.5px; /* ~3% reduction */
+    }
+
+    .hero-buttons {
+        gap: 12px; /* ~7% reduction */
+    }
+
+    .faq h2 {
+        font-size: 27px; /* ~3% reduction */
+    }
+
+    footer {
+        padding: 61px 0; /* ~4% reduction */
+    }
+
+    .footer {
+        gap: 21px; /* ~4% reduction */
+    }
+}
+
+@media screen and (max-width: 800px) {
+    nav {
+        max-width: 70vw;
+    }
+
+    .secImg img,
+    .secImg video {
+        width: 230px; /* ~5% reduction */
+    }
+
+    .hero> :nth-child(1) {
+        font-size: 26px; /* ~3% reduction */
+    }
+
+    .hero> :nth-child(2),
+    .hero> :nth-child(3) {
+        font-size: 15px; /* ~3% reduction */
+    }
+
+    .hero-buttons {
+        gap: 11px; /* ~8% reduction */
+    }
+
+    .faq h2 {
+        font-size: 26px; /* ~3% reduction */
+    }
+
+    footer {
+        padding: 58px 0; /* ~4% reduction */
+    }
+
+    .footer {
+        gap: 20px; /* ~5% reduction */
+    }
+}
+
+@media screen and (max-width: 700px) {
+    nav {
+        max-width: 65vw;
+    }
+
+    .secImg img,
+    .secImg video {
+        width: 215px; /* ~5% reduction */
+    }
+
+    .hero> :nth-child(1) {
+        font-size: 25px; /* ~4% reduction */
+    }
+
+    .hero> :nth-child(2),
+    .hero> :nth-child(3) {
+        font-size: 14.5px; /* ~3% reduction */
+    }
+
+    .hero-buttons {
+        gap: 10px; /* ~9% reduction */
+    }
+
+    .faq h2 {
+        font-size: 25px; /* ~4% reduction */
+    }
+
+    footer {
+        padding: 55px 0; /* ~5% reduction */
+    }
+
+    .footer {
+        gap: 19px; /* ~5% reduction */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav {
+        max-width: 60vw;
+    }
+
+    .secImg img,
+    .secImg video {
+        width: 200px; /* ~7% reduction */
+    }
+
+    .hero> :nth-child(1) {
+        font-size: 24px; /* ~4% reduction */
+    }
+
+    .hero> :nth-child(2),
+    .hero> :nth-child(3) {
+        font-size: 14px; /* ~3% reduction */
+    }
+
+    .hero-buttons {
+        gap: 9px; /* ~10% reduction */
+    }
+
+    .faq h2 {
+        font-size: 24px; /* ~4% reduction */
+    }
+
+    footer {
+        padding: 52px 0; /* ~5% reduction */
+    }
+
+    .footer {
+        gap: 18px; /* ~5% reduction */
+    }
+}
+
+@media screen and (max-width: 500px) {
+    nav {
+        max-width: 55vw;
+    }
+
+    .secImg img,
+    .secImg video {
+        width: 185px; /* ~7% reduction */
+    }
+
+    .hero> :nth-child(1) {
+        font-size: 23px; /* ~4% reduction */
+    }
+
+    .hero> :nth-child(2),
+    .hero> :nth-child(3) {
+        font-size: 13.5px; /* ~4% reduction */
+    }
+
+    .hero-buttons {
+        gap: 8px; /* ~11% reduction */
+    }
+
+    .faq h2 {
+        font-size: 23px; /* ~4% reduction */
+    }
+
+    footer {
+        padding: 49px 0; /* ~5% reduction */
+    }
+
+    .footer {
+        gap: 17px; /* ~6% reduction */
+    }
+}
+
+@media screen and (max-width: 400px) {
+    nav {
+        max-width: 50vw;
+    }
+
+    .secImg img,
+    .secImg video {
+        width: 170px; /* ~8% reduction */
+    }
+
+    .hero> :nth-child(1) {
+        font-size: 22px; /* ~4% reduction */
+    }
+
+    .hero> :nth-child(2),
+    .hero> :nth-child(3) {
+        font-size: 13px; /* ~4% reduction */
+    }
+
+    .hero-buttons {
+        gap: 7px; /* ~13% reduction */
+    }
+
+    .faq h2 {
+        font-size: 22px; /* ~4% reduction */
+    }
+
+    footer {
+        padding: 46px 0; /* ~5% reduction */
+    }
+
+    .footer {
+        gap: 16px; /* ~6% reduction */
+    }
+}
+
+@media screen and (max-width: 300px) {
+    nav {
+        max-width: 45vw;
+    }
+
+    .secImg img,
+    .secImg video {
+        width: 155px; /* ~9% reduction */
+    }
+
+    .hero> :nth-child(1) {
+        font-size: 20px; /* ~9% reduction */
+    }
+
+    .hero> :nth-child(2),
+    .hero> :nth-child(3) {
+        font-size: 12px; /* ~8% reduction */
+    }
+
+    .hero-buttons {
+        gap: 6px; /* ~14% reduction */
+    }
+
+    .faq h2 {
+        font-size: 20px; /* ~9% reduction */
+    }
+
+    footer {
+        padding: 43px 0; /* ~7% reduction */
+    }
+
+    .footer {
+        gap: 15px; /* ~6% reduction */
+    }
+}
+
+@media screen and (max-width: 200px) {
+    nav {
+        max-width: 40vw;
+    }
+
+    .secImg img,
+    .secImg video {
+        width: 140px; /* ~10% reduction */
+    }
+
+    .hero> :nth-child(1) {
+        font-size: 18px; /* ~10% reduction */
+    }
+
+    .hero> :nth-child(2),
+    .hero> :nth-child(3) {
+        font-size: 11px; /* ~8% reduction */
+    }
+
+    .hero-buttons {
+        gap: 5px; /* ~17% reduction */
+    }
+
+    .faq h2 {
+        font-size: 18px; /* ~10% reduction */
+    }
+
+    footer {
+        padding: 40px 0; /* ~7% reduction */
+    }
+
+    .footer {
+        gap: 14px; /* ~7% reduction */
     }
 }
